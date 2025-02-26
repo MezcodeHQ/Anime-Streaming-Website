@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header parallax">
+        <div class="logo">Anime World</div>
+        <div class="nav-controls">
+            <input type="text" id="search-bar" placeholder="Search anime..." class="ripple">
+        </div>
+    </div>
+
+    <!-- Video Banner Section -->
+    <div class="banner parallax">
+        <video autoplay muted loop id="banner-video">
+            <source src="win.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1 class="banner-title">Welcome to <span style="color: #fc466b;">Anime</span> <span style="color: #6a11cb;">World</span></h1>
+            <p class="banner-subtitle">Discover the best anime series and movies all in one place</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </div>
+
+    <!-- Section Title -->
+    <h2 class="section-title">Featured Anime</h2>
+
+    <!-- Anime Grid Section -->
+    <div class="anime-grid" id="anime-grid">
+        <!-- Sample Anime Cards -->
+        <div class="anime-card" data-id="1" data-title="Demon Slayer: Kimetsu no Yaiba">
+            <div class="video-wrapper">
+                <video class="hover-video" autoplay muted loop>
+                    <source src="videos/Tanjiro Vs Rui - Full Fight Scene _ Demon Slayer (CLIP 4K).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <img class="anime-thumbnail" src="1331191.png" alt="Demon Slayer Thumbnail">
+            <div class="anime-info">
+                <h3 class="anime-title">Demon Slayer: Kimetsu no Yaiba</h3>
+                <p class="anime-description">Tanjiro sets out to become a demon slayer after his family is slaughtered and his sister is turned into a demon.</p>
+                <div class="anime-buttons"></div>
+            </div>
+        </div>
+
+        <div class="anime-card" data-id="2" data-title="Jujutsu Kaisen">
+            <div class="video-wrapper">
+                <video class="hover-video" autoplay muted loop>
+                    <source src="videos/1731602954.5880451_ytshorts.savetube.me.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <img class="anime-thumbnail" src="jujutsu-kaisen-3840x2160-9277.jpg" alt="Jujutsu Kaisen Thumbnail">
+            <div class="anime-info">
+                <h3 class="anime-title">Jujutsu Kaisen</h3>
+                <p class="anime-description">A boy swallows a cursed talisman and becomes cursed himself. He enters a shaman school to locate the demon's other body parts.</p>
+                <div class="anime-buttons"></div>
+            </div>
+        </div>
+
+        <div class="anime-card" data-id="3" data-title="Dandadan">
+            <div class="video-wrapper">
+                <video class="hover-video" autoplay muted loop>
+                    <source src="videos/1731602755.4749959_ytshorts.savetube.me.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <img class="anime-thumbnail" src="dan-da-dan.jpg" alt="Dandadan Thumbnail">
+            <div class="anime-info">
+                <h3 class="anime-title">Dandadan</h3>
+                <p class="anime-description">Two high schoolers who don't believe in ghosts and aliens encounter supernatural phenomena that challenge their beliefs.</p>
+                <div class="anime-buttons"></div>
+            </div>
+        </div>
+
+        <div class="anime-card" data-id="4" data-title="Dragon Ball DAIMA">
+            <div class="video-wrapper">
+                <video class="hover-video" autoplay muted loop>
+                    <source src="videos/1731602605.1042154_ytshorts.savetube.me.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <img class="anime-thumbnail" src="goku.jpg" alt="Dragon Ball DAIMA Thumbnail">
+            <div class="anime-info">
+                <h3 class="anime-title">Dragon Ball DAIMA</h3>
+                <p class="anime-description">After being turned small by a conspiracy, Goku and his friends go on a journey to restore their original forms.</p>
+                <div class="anime-buttons"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <button id="prev-btn">&#10094;</button>
+        <button id="next-btn">&#10095;</button>
+        <div class="lightbox-content">
+            <video id="lightbox-video" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h2 id="lightbox-title"></h2>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Define anime data
+            const animeData = [
+                {
+                    id: 1,
+                    title: "Demon Slayer: Kimetsu no Yaiba",
+                    thumbnail: "1331191.png",
+                    video: "videos/Tanjiro Vs Rui - Full Fight Scene _ Demon Slayer (CLIP 4K).mp4",
+                    description: "Tanjiro sets out to become a demon slayer after his family is slaughtered and his sister is turned into a demon."
+                },
+                {
+                    id: 2,
+                    title: "Jujutsu Kaisen",
+                    thumbnail: "jujutsu-kaisen-3840x2160-9277.jpg",
+                    video: "videos/1731602954.5880451_ytshorts.savetube.me.mp4",
+                    description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman school to be able to locate the demon's other body parts and thus exorcise himself."
+                },
+                {
+                    id: 3,
+                    title: "Dandadan",
+                    thumbnail: "dan-da-dan.jpg",
+                    video: "videos/1731602755.4749959_ytshorts.savetube.me.mp4",
+                    description: "Momo Ayase and Okarun, two high schoolers who don't believe in ghosts and aliens respectively, encounter overwhelming supernatural phenomena that challenge their beliefs."
+                },
+                {
+                    id: 4,
+                    title: "Dragon Ball DAIMA",
+                    thumbnail: "goku.jpg",
+                    video: "videos/1731602605.1042154_ytshorts.savetube.me.mp4",
+                    description: "After being turned small by a conspiracy, Goku and his friends go on a journey with new allies to restore their original forms."
+                }
+            ];
+
+            // DOM elements
+            const searchBar = document.getElementById('search-bar');
+            const animeCards = document.querySelectorAll('.anime-card');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDescription = document.getElementById('lightbox-description');
+            const closeBtn = document.querySelector('.close-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            // Search functionality
+            searchBar.addEventListener('keyup', function() {
+                let filter = this.value.toLowerCase().trim();
+                animeCards.forEach(card => {
+                    let title = card.getAttribute('data-title').toLowerCase();
+                    card.style.display = title.includes(filter) ? "block" : "none";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
